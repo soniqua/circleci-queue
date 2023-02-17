@@ -7,5 +7,6 @@ jobs:
       - queue/until_front_of_line:
           # only on workflow
           consider-branch: false
+          block-workflow: true
           only-on-workflow: "build-deploy"
           time: "1"
