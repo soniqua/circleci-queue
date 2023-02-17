@@ -1,0 +1,11 @@
+jobs:
+  build:
+    docker:
+      - image: circleci/node:10
+    working_directory: ~/repo
+    steps:
+      - queue/until_front_of_line:
+          # only on workflow
+          consider-branch: false
+          only-on-workflow: "build-deploy"
+          time: "1"
